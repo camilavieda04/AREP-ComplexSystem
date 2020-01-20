@@ -3,33 +3,30 @@ package edu.escuelaing.edu.arem.ASE.app;
 import java.util.*;
 
 public class ComplexSystems {
-
-	public LinkedList<Double> lista = new LinkedList<Double>();
 	
-	/**
-	 * Constructor
-	 */
+	public LinkedL lista;
 	
 	public ComplexSystems() {
-		lista.add(186.0);
-		lista.add(699.0);
-		lista.add(132.0);
-		lista.add(272.0);
-		lista.add(291.0);
-		lista.add(331.0);
-		lista.add(199.0);
-		lista.add(1890.0);
-		lista.add(788.0);
-		lista.add(1601.0);
 		
+		lista = new LinkedL();
+		lista.insertNodo(186.0);
+		lista.insertNodo(699.0);
+		lista.insertNodo(132.0);
+		lista.insertNodo(291.0);
+		lista.insertNodo(272.0);
+		lista.insertNodo(331.0);
+		lista.insertNodo(199.0);
+		lista.insertNodo(1890.0);
+		lista.insertNodo(788.0);
+		lista.insertNodo(1601.0);
+		System.out.println(lista);
 	}
 	
-	
-	
+	/*
 	/**
 	 * Metodo que retorna la sumatoria de los elementos de una LinkedList
 	 * @return cont
-	 */
+	
 	public  double sumatoria() {
 		double cont = 0;
 		for (int i = 0; i<lista.size();i++) {
@@ -38,23 +35,35 @@ public class ComplexSystems {
 		}
 		return cont;
 	}
+	*/
 	
 	/**
 	 * Metodo que retorna la media de una LinkedList
-	 * @return m 
+	 * @param lista LinkedList donde se encuentran todos los nodos
+	 * @return resp
 	 */
 	
-	public double media() {
-		double m = 0;
-		m = sumatoria()/lista.size();
-		return m;
+	public Double media() {
+		System.out.println(lista);
+		Double cont = 0.0;
+		Double m = 0.0;
+		Nodo a = lista.getPrimero();
+		while (a!=null) {
+			m+=1;
+			cont+=a.getDato();
+			a=a.getNext();
+		}
+		Double resp = cont/m;
+		System.out.println(resp);
+		return resp;
 		
 	}
 	
+	/*
 	/**
 	 * Metodo que retorna la sumatoria de cada uno de los elementos de la LinkedList con el media que se calculo anteriormente
 	 * @return cont
-	 */
+	 
 	public double sumatoria2() {
 		double cont = 0;
 		for (int i=0;i<lista.size();i++) {
@@ -65,19 +74,37 @@ public class ComplexSystems {
 		
 		return cont;
 	}
+	*/
+	
 	/**
 	 * Metodo que retorna la desviacion estandar de los elementos de una LinkedList
 	 * @return r
 	 */
 	
-	public  double DesviacionEstandar() {
-		double r,d = 0;
-		int lon = lista.size()-1;
-		d = sumatoria2()/lon;
-		r = Math.sqrt(d);
-		return r;
+	public  Double DesviacionEstandar() {
+		Double m=media();
+		Double cont =0.0;
+		Double datos = -1.0;
+		Nodo a = lista.getPrimero();
+		while (a!=null) {
+			datos+=1;
+			cont+=(a.getDato()-m)*(a.getDato()-m);
+			a=a.getNext();
+		}
+		return Math.sqrt(cont/datos);
 		
 	}
+	
+	public void insertandoNodo(Double datos) {
+		lista.insertNodo(datos);
+	}
+	
+	public void eliminandoNodo(Double datos) {
+		lista.eliminarNodo(datos);
+	}
+	
+	
+	
 	
 	
 }

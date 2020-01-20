@@ -2,16 +2,16 @@ package edu.escuelaing.edu.arem.ASE.app;
 
 public class Nodo {
 	
-	public int dato;
+	public Double dato;
 	public Nodo next;
-	public Nodo prior;
 	
 	/*
 	 * Constructor de la clase Nodo
 	 */
 	
-	public Nodo(int dato) {
+	public Nodo(Nodo x,Double dato) {
 		this.dato=dato;
+		this.next = next;
 	}
 	
 	/**
@@ -19,7 +19,7 @@ public class Nodo {
 	 * @return dato
 	 */
 	
-	public int getDato() {
+	public Double getDato() {
 		return dato;
 	}
 	
@@ -28,7 +28,7 @@ public class Nodo {
 	 * @param dato
 	 */
 	
-	public void setDato(int dato) {
+	public void setDato(Double dato) {
 		this.dato=dato;
 	}
 	
@@ -48,27 +48,6 @@ public class Nodo {
 	public void setNext(Nodo next) {
 		this.next=next;
 	}
-	
-	
-	/**
-	 * Metodo que retorna el nodo anterior
-	 * @return prior
-	 */
-	public Nodo getPrior() {
-		return prior;
-	}
-	
-	/**
-	 * Metodo que cambia el nodo anterior
-	 * @param prior
-	 */
-	public void setPrior(Nodo prior) {
-		this.prior=prior;
-	}
-	
-	
-	
-	
 	
 
 }

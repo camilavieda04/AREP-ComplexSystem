@@ -7,27 +7,29 @@ import java.util.ListIterator;
 
 public class LinkedL implements List  {
 	
-	int longitud;
 	Nodo n;
 
 	public LinkedL() {
-		longitud = 0;
 		n = null;
 	}
 	
-	public Nodo insertNodo(Nodo n, int datos ) {
+	/**
+	 * Metodo que inserta un nodo en la LinkedList
+	 * @param datos valor del elemento que se insertara
+	 * @return
+	 */
+	public void insertNodo(Double datos) {
 		Nodo cont;
 		if (n == null) {
-			n = new Nodo(datos);
-			return n;
+			n = new Nodo(null,datos);
 		}
 		else {
 			cont = n;
 			while (n.next != null) {
-				cont = cont.next;
+				cont = cont.getNext();
 			}
-			cont.next = new Nodo(datos);
-			return n;
+			Nodo x = new Nodo(null,datos);
+			n.setNext(x);
 		}
 	}
 	
@@ -68,9 +70,12 @@ public class LinkedL implements List  {
 		return false;
 	}
 
-	public Object get(int index) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * Metodo que retorna el nodo que se encuentra en la primera posicion de la LinkedList
+	 * @return
+	 */
+	public Nodo getPrimero() {
+		return n;
 	}
 
 	public int indexOf(Object o) {
@@ -102,6 +107,43 @@ public class LinkedL implements List  {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	/**
+	 * Metodo que elimina un elemento de la linked list
+	 * @param datos valor del elemento que se eliminara de la Linked List
+	 */
+	
+	public void eliminarNodo(Double datos) {
+		boolean d = false;
+		if(n!=null) {
+			if(n.getDato()==datos) {
+				n=n.getNext();
+				d = true;
+			}
+			
+			else {
+				Nodo a = n.getNext();
+				Nodo b = n;
+				while (a!=null) {
+					if (a.getDato()==datos) {
+						a.setNext(a.getNext());
+						d = true;
+						break;
+					}
+					a = a.getNext();
+					b = b.getNext();
+				}
+			}
+		}
+		
+		if (d==true) {
+			System.out.println("Nodo eliminado");
+		}
+		else {
+			System.out.println("No se encontro el nodo");
+		}
+	}
+	
 
 	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
@@ -154,6 +196,11 @@ public class LinkedL implements List  {
 		//n = lista.insertNodo(n,3);
 		//n = lista.insertNodo(n, 5);
 		
+	}
+
+	public Object get(int index) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
