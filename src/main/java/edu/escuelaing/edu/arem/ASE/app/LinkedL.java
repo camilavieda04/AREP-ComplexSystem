@@ -21,7 +21,6 @@ public class LinkedL implements List  {
 	/**
 	 * Metodo que inserta un nodo en la LinkedList
 	 * @param datos valor del elemento que se insertara
-	 * @return
 	 */
 	public void insertNodo(Double datos) {
 		Nodo nuevoNodo = new Nodo(datos);
@@ -37,6 +36,15 @@ public class LinkedL implements List  {
 			nuevoNodo.setNext(primero);
 		}
 		len+=1;
+	}
+
+	/**
+	 * Metodo para eliminar un nodo en la LinkedList
+	 * @param datos
+	 */
+
+	public void deleteNodo(Double datos){
+
 	}
 	
 	public boolean add(Object e) {
