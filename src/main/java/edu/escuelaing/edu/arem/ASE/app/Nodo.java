@@ -9,9 +9,8 @@ public class Nodo {
 	 * Constructor de la clase Nodo
 	 */
 	
-	public Nodo(Nodo x,Double dato) {
+	public Nodo(Double dato) {
 		this.dato=dato;
-		this.next = next;
 	}
 	
 	/**
@@ -33,7 +32,7 @@ public class Nodo {
 	}
 	
 	/**
-	 * Metodo que retorna el nodo siguiente 
+	 * Metodo que retorna el nodo siguiente  
 	 * @return next
 	 */
 	public Nodo getNext() {
@@ -42,7 +41,7 @@ public class Nodo {
 	
 	
 	/**
-	 * Metodo que cambia el nodo siguiente
+	 * Metodo que cambia el nodo siguiente 
 	 * @param next
 	 */
 	public void setNext(Nodo next) {

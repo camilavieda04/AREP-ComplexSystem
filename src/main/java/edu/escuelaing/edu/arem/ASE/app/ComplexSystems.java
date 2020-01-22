@@ -99,9 +99,7 @@ public class ComplexSystems {
 		lista.insertNodo(datos);
 	}
 	
-	public void eliminandoNodo(Double datos) {
-		lista.eliminarNodo(datos);
-	}
+	
 	
 	
 	

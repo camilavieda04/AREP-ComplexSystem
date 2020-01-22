@@ -8,8 +8,13 @@ import java.util.ListIterator;
 public class LinkedL implements List  {
 	
 	Nodo n;
+	Nodo primero;
+	Nodo ultimo;
+	Double len;
+	
 
 	public LinkedL() {
+		len = 0.0;
 		n = null;
 	}
 	
@@ -19,18 +24,19 @@ public class LinkedL implements List  {
 	 * @return
 	 */
 	public void insertNodo(Double datos) {
-		Nodo cont;
-		if (n == null) {
-			n = new Nodo(null,datos);
+		Nodo nuevoNodo = new Nodo(datos);
+		if (len == 0.0) {
+			primero=nuevoNodo;
+			ultimo=nuevoNodo;
+			n=nuevoNodo;
+			nuevoNodo.setNext(nuevoNodo);
 		}
 		else {
-			cont = n;
-			while (n.next != null) {
-				cont = cont.getNext();
-			}
-			Nodo x = new Nodo(null,datos);
-			n.setNext(x);
+			ultimo.setNext(nuevoNodo);
+			ultimo = nuevoNodo;
+			nuevoNodo.setNext(primero);
 		}
+		len+=1;
 	}
 	
 	public boolean add(Object e) {
@@ -71,13 +77,45 @@ public class LinkedL implements List  {
 	}
 
 	/**
-	 * Metodo que retorna el nodo que se encuentra en la primera posicion de la LinkedList
-	 * @return
+	 * Metodo que retorna el nodo actual 
+	 * @return n
 	 */
-	public Nodo getPrimero() {
+	public Nodo getActual() {
 		return n;
 	}
 
+	/**
+	 * Metodo que cambia el nodo actual por el nuevo nodo que entra a la LinkedList 
+	 * @param n
+	 */
+	public void setNodoActual(Nodo n) {
+		this.n=n;
+	}
+	
+	/**
+	 * Metodo que retorna el nodo que se encuentra en la primera posicion de la LinkedList
+	 * @return primero
+	 */
+	public Nodo getPrimero() {
+		return primero;
+	}
+	
+	/**
+	 * Metodo que retorna el nodo que se encuentra en la ultima posicion de la LinkedList
+	 * @return ultimo
+	 */
+	public Nodo getUltimo() {
+		return ultimo;
+	}
+	
+	/**
+	 * Metodo que retornala longitud de la LinkedList
+	 * @return len
+	 */
+	public Double getLen() {
+		return len;
+	}
+	
 	public int indexOf(Object o) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -108,42 +146,6 @@ public class LinkedL implements List  {
 		return null;
 	}
 
-	/**
-	 * Metodo que elimina un elemento de la linked list
-	 * @param datos valor del elemento que se eliminara de la Linked List
-	 */
-	
-	public void eliminarNodo(Double datos) {
-		boolean d = false;
-		if(n!=null) {
-			if(n.getDato()==datos) {
-				n=n.getNext();
-				d = true;
-			}
-			
-			else {
-				Nodo a = n.getNext();
-				Nodo b = n;
-				while (a!=null) {
-					if (a.getDato()==datos) {
-						a.setNext(a.getNext());
-						d = true;
-						break;
-					}
-					a = a.getNext();
-					b = b.getNext();
-				}
-			}
-		}
-		
-		if (d==true) {
-			System.out.println("Nodo eliminado");
-		}
-		else {
-			System.out.println("No se encontro el nodo");
-		}
-	}
-	
 
 	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
@@ -189,18 +191,17 @@ public class LinkedL implements List  {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	public static void main(String [] args) {
-		LinkedL lista = new LinkedL();
-		Nodo n = null;
-		//n = lista.insertNodo(n,3);
-		//n = lista.insertNodo(n, 5);
-		
-	}
 
 	public Object get(int index) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	public void printLinkedList() {
+		n=primero;
+		for(int i=0;i<len;i++) {
+			System.out.println(n.getDato());
+			n=n.getNext();
+		}
+	}
 }
