@@ -2,22 +2,16 @@ package edu.escuelaing.edu.arem.ASE.app;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-
-
 public class ComplexSystemTest {
-	
-	//ComplexSystems c = new ComplexSystems();
-	
+
 	 @Test
 	 public void test() {
-		 
 	 }
 	 
 	 @Test
 	 /*
 	  * Calcular la media de los datos de la Linked List
 	 */
-
 	 public void mediaLinkedList() {
 	 	 ComplexSystems c = new ComplexSystems();
 	 	 LinkedL lis = new LinkedL();
