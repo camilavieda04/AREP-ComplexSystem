@@ -38,44 +38,6 @@ public class LinkedL implements List  {
 		len+=1;
 	}
 
-	
-	public boolean add(Object e) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
-	
-
-	public void add(int index, Object element) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public boolean addAll(Collection c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public boolean addAll(int index, Collection c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public void clear() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public boolean contains(Object o) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public boolean containsAll(Collection c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	/**
 	 * Metodo que retorna el nodo actual 
 	 * @return n
@@ -121,30 +83,62 @@ public class LinkedL implements List  {
 	 * @param valor Variable que representa el valor del nodo en la LinkedList
 	 */
 	
-	public void deleteNodo(Double valor) {
-		boolean elim = false;
-		if(primero!=null) {
-			if(primero.getDato()==valor) {
-				primero=primero.getNext();
-				elim=true;
-			}
-			else {
-				n = primero.getNext();
-				ultimo=primero;
-				while(n!=null) {
-					if(n.getDato()==valor) {
-						ultimo.setNext(n.getNext());
-						elim=true;
-						break;
-					}
-				}
-				n=n.getNext();
-				ultimo=ultimo.getNext();
-			}
+	public void deleteNodo(Double datos) {
+		Nodo nuevoNodo = new Nodo(datos);
+		if (len == 0.0) {
+			primero=nuevoNodo;
+			ultimo=nuevoNodo;
+			n=nuevoNodo;
+			nuevoNodo.setNext(nuevoNodo);
 		}
-		
+		else {
+			ultimo.setNext(nuevoNodo);
+			ultimo = nuevoNodo;
+			nuevoNodo.setNext(primero);
+		}
+		len-=1;
+	}
+
+
+	
+	public boolean add(Object e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	
+
+	public void add(int index, Object element) {
+		// TODO Auto-generated method stub
 		
 	}
+
+	public boolean addAll(Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean addAll(int index, Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean contains(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean containsAll(Collection c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
 	public int indexOf(Object o) {
 		// TODO Auto-generated method stub
 		return 0;
