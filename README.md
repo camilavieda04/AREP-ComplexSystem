@@ -3,9 +3,6 @@ Escriba un programa que calcule la media y la desviación estándar de un conjun
 
 Use una Linked List para almacenar los ' n ' números de los cuales se realizarán los cálculos. 
 
-Escriba un programa que calcule la media y la desviación estándar de un conjunto de n números reales. 
-Use una Linked List para almacenar los ' n ' números de los cuales se realizarán los cálculos. 
-
 ## ¿Cómo se ejecuta? 
 Para ejecutar este programa es necesario tener en cuenta los siguientes pasos:
 
