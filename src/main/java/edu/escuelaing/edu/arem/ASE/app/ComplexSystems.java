@@ -11,7 +11,6 @@ public class ComplexSystems {
 	public ComplexSystems() {
 		
 		lista = new LinkedL();
-
 	}
 
 	/**

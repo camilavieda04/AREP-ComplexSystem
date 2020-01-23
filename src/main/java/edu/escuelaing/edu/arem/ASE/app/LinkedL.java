@@ -38,14 +38,6 @@ public class LinkedL implements List  {
 		len+=1;
 	}
 
-	/**
-	 * Metodo para eliminar un nodo en la LinkedList
-	 * @param datos
-	 */
-
-	public void deleteNodo(Double datos){
-
-	}
 	
 	public boolean add(Object e) {
 		// TODO Auto-generated method stub
@@ -117,13 +109,42 @@ public class LinkedL implements List  {
 	}
 	
 	/**
-	 * Metodo que retornala longitud de la LinkedList
+	 * Metodo que retorna la longitud de la LinkedList
 	 * @return len
 	 */
 	public Double getLen() {
 		return len;
 	}
 	
+	/**
+	 * Metodo para eliminar un Nodo de la LinkedList
+	 * @param valor
+	 */
+	
+	public void deleteNodo(Double valor) {
+		boolean elim = false;
+		if(primero!=null) {
+			if(primero.getDato()==valor) {
+				primero=primero.getNext();
+				elim=true;
+			}
+			else {
+				n = primero.getNext();
+				ultimo=primero;
+				while(n!=null) {
+					if(n.getDato()==valor) {
+						ultimo.setNext(n.getNext());
+						elim=true;
+						break;
+					}
+				}
+				n=n.getNext();
+				ultimo=ultimo.getNext();
+			}
+		}
+		
+		
+	}
 	public int indexOf(Object o) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -205,11 +226,4 @@ public class LinkedL implements List  {
 		return null;
 	}
 
-	public void printLinkedList() {
-		n=primero;
-		for(int i=0;i<len;i++) {
-			System.out.println(n.getDato());
-			n=n.getNext();
-		}
-	}
 }
