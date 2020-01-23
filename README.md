@@ -30,3 +30,7 @@ Para ejecutar este programa es necesario tener en cuenta los siguientes pasos:
 
 Sarah Camila Vieda Castro
 
+## License
+
+This project is licensed under the GNU General Public License v3.0 - see the LICENSE.md file for details.
+
