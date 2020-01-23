@@ -15,7 +15,7 @@ public class Nodo {
 	
 	/**
 	 * Metodo que retorna dato del Nodo 
-	 * @return dato
+	 * @return dato 
 	 */
 	
 	public Double getDato() {
@@ -24,7 +24,7 @@ public class Nodo {
 	
 	/**
 	 * Metodo que cambia el dato del Nodo 
-	 * @param dato
+	 * @param dato variable que retorna el valor del Nodo
 	 */
 	
 	public void setDato(Double dato) {
@@ -42,7 +42,7 @@ public class Nodo {
 	
 	/**
 	 * Metodo que cambia el nodo siguiente 
-	 * @param next
+	 * @param next variable que representa el nodo siguiente al actual
 	 */
 	public void setNext(Nodo next) {
 		this.next=next;

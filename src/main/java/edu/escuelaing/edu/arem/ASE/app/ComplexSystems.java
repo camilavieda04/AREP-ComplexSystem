@@ -15,7 +15,7 @@ public class ComplexSystems {
 
 	/**
 	 * Metodo que retorna la media de una LinkedList
-	 * @return resp
+	 * @return resp variable en la que se retorna el valor de la media
 	 */
 	
 	public Double retornaMedia() {
@@ -26,7 +26,6 @@ public class ComplexSystems {
 			//System.out.println(cont);
 		}
 		Double resp = cont/lista.getLen();
-		//System.out.println("RESPUESTAAAA"+resp);
 		return resp;
 		
 	}
@@ -34,6 +33,7 @@ public class ComplexSystems {
 	
 	/**
 	 * Metodo que retorna la desviacion estandar de los elementos de una LinkedList
+	 * @param resp Variable que representa la media 
 	 * @return r
 	 */
 	

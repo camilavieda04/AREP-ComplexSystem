@@ -86,7 +86,7 @@ public class LinkedL implements List  {
 
 	/**
 	 * Metodo que cambia el nodo actual por el nuevo nodo que entra a la LinkedList 
-	 * @param n
+	 * @param n Nodo actual
 	 */
 	public void setNodoActual(Nodo n) {
 		this.n=n;
@@ -118,7 +118,7 @@ public class LinkedL implements List  {
 	
 	/**
 	 * Metodo para eliminar un Nodo de la LinkedList
-	 * @param valor
+	 * @param valor Variable que representa el valor del nodo en la LinkedList
 	 */
 	
 	public void deleteNodo(Double valor) {
