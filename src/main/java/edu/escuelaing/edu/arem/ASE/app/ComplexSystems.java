@@ -37,7 +37,7 @@ public class ComplexSystems {
 	 * @return r
 	 */
 	
-	public  Double DesviacionEstandar(Double resp) {
+	public  Double desviacionEstandar(Double resp) {
 		Double cont = 0.0;
 		for (int i=0; i<lista.getLen();i++){
 			Double resp1 = lista.getActual().getDato()-resp;

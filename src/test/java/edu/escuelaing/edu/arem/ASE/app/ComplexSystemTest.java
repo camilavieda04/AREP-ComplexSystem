@@ -69,7 +69,7 @@ public class ComplexSystemTest {
 		c.insertandoNodo(788.0);
 		c.insertandoNodo(1601.0);
 		Double resp = 625.6339806770231;
-		Double respuesta = c.DesviacionEstandar(638.9);
+		Double respuesta = c.desviacionEstandar(638.9);
 		assertEquals(respuesta,resp);
 	}
 	
@@ -88,7 +88,7 @@ public class ComplexSystemTest {
 		c.insertandoNodo(624.0);
 		c.insertandoNodo(1503.0);
 		Double resp = 572.026844746915;
-		Double respuesta = c.DesviacionEstandar(550.6);
+		Double respuesta = c.desviacionEstandar(550.6);
 		System.out.println(respuesta);
 		assertEquals(respuesta,resp);
 	}
